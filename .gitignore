@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Dataset - confidential
+data/
+dataset/
+
+# Images
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.bmp
+
+# Model checkpoints
+checkpoints/*
+*.pt
+*.pth
+*.ckpt
+
+# Experiment outputs
+outputs/
+logs/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
