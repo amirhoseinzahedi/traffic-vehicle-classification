@@ -197,6 +197,7 @@ def main():
 
     history = []
     best_validation_accuracy = 0.0
+    best_validation_loss = float("inf")
 
     print("\nTraining")
     print("--------")
@@ -232,12 +233,17 @@ def main():
             f"| LR: {current_learning_rate:.6f}"
         )
 
-        if validation_accuracy > best_validation_accuracy:
+        if validation_accuracy > best_validation_accuracy or (
+            validation_accuracy == best_validation_accuracy
+            and validation_loss < best_validation_loss
+        ):
             best_validation_accuracy = validation_accuracy
+
+            best_validation_loss = validation_loss
 
             checkpoint_path = save_checkpoint(
                 model,
-                epoch,
+                epoch + 1,
                 validation_accuracy,
                 class_mapping,
             )
